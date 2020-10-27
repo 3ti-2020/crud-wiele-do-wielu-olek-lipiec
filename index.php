@@ -3,29 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Strona</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    hello world
+    <header class="header"></header>
 
-    <?php
+    <main class="main">
 
-    require_once("lib/connect.php");
+        <?php
 
-    $query = "SELECT * FROM `lib_autor`";
-    $result = $conn->query($query);
+        require_once("lib/connect.php");
 
-    while ($rs = $result->fetch_assoc()) {
-        echo("ID ".$row['name']."<br>");
-    }
+        $query = "SELECT * FROM `lib_autor`";
+        $result = $conn->query($query);
 
-    $conn->close();
+        while ($rs = $result->fetch_assoc()) {
+            echo("ID ".$row['name']."<br>");
+        }
 
-    echo("start");
+        $conn->close();
 
-    ?>
+        echo("start");
+
+        ?>
     
+    </main>
+
 </body>
 </html>
