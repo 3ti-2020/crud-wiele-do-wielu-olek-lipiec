@@ -22,7 +22,7 @@
         $result = $conn->query($query);
 
         while ($rs = $result->fetch_assoc()) {
-            echo("ID ".$row['name']."<br>");
+            echo("ID ".$rs['name']."<br>");
         }
 
         $conn->close();
