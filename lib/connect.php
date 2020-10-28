@@ -1,5 +1,5 @@
 <?php
 
-    $conn = new mysqli("127.0.0.1", "root", "", "biblioteka");
+    $conn = new mysqli("185.243.55.195", "lipiec", "haslo123", "biblioteka");
 
 ?>

@@ -5,9 +5,11 @@
 
 body {
     min-height: 100vh;
+    min-width: 100%;
     display: grid;
     grid-template-areas: "h m";
     grid-template-rows: 30vh auto;
+    grid-template-columns: 100%;
 }
 
 .header {
@@ -15,7 +17,7 @@ body {
     background: lightblue;
 }
 
-.main P{
+.main {
     grid-area: m;
     background: lightcoral;
 }
