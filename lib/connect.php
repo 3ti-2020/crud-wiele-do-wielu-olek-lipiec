@@ -1,5 +1,5 @@
 <?php
 
-    $conn = new mysqli("185.243.55.195", "lipiec", "haslo123", "biblioteka");
+    $conn = new mysqli("mysql-oleklipiec404.alwaysdata.net", "217036_lipiec", "haslo123321!", "oleklipiec404_lipiec");
 
 ?>
