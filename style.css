@@ -7,8 +7,10 @@ body {
     min-height: 100vh;
     min-width: 100%;
     display: grid;
-    grid-template-areas: "h m";
-    grid-template-rows: 30vh auto;
+    grid-template-areas:
+    "h"
+    "m";
+    grid-template-rows: 25vh auto;
     grid-template-columns: 100%;
 }
 
