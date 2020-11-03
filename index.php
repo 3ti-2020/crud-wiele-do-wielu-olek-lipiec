@@ -16,15 +16,15 @@
 
     <nav class="nav">
 
-    <form acton="lib/insert.php" method="POST">
+        <form class="form" action="lib/insert.php" method="POST">
 
-        <label for="autor">Autor:</label>
-        <input type="text" name="autor" id="autor">
-        <label for="ksiazka">Książka:</label>
-        <input type="text" name="ksiazka" id="ksiazka">
-        <input type="submit" value="Dodaj">
+            <label for="autor">Autor:</label>
+            <input type="text" name="autor" id="autor">
+            <label for="ksiazka">Książka:</label>
+            <input type="text" name="ksiazka" id="ksiazka">
+            <input type="submit" value="Dodaj">
 
-    </form>
+        </form>
 
     </nav>
 
@@ -32,18 +32,9 @@
 
         <?php
 
-        require_once("lib/connect.php");
+        require_once("lib/table.php");
 
-        $query = "SELECT * FROM `lib_autor`";
-        $result = $conn->query($query);
-
-        while ($rs = $result->fetch_assoc()) {
-            echo("ID ".$rs['name']."<br>");
-        }
-
-        $conn->close();
-
-        echo("start");
+        table("SELECT * FROM `lib_autor_tytul`, `lib_autor`, `lib_tytul` WHERE `lib_autor_tytul`.`id_autor`=`lib_autor`.`id_autor` AND `lib_autor_tytul`.`id_tytul`=`lib_tytul`.`id_tytul`", array("id_autor_tytul", "name", "tytul"));
 
         ?>
     
