@@ -1,0 +1,144 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.red {
+    --background: #ff0000;
+    --dark-background: #990000;
+    --hover-background: #770000;
+}
+
+.green {
+    --background: #55dd55;
+    --dark-background: #11aa11;
+    --hover-background: #008800;
+}
+
+.blue {
+    --background: #5555ff;
+    --dark-background: #3333bb;
+    --hover-background: #1111aa;
+}
+
+body {
+    min-width: 100%;
+    min-height: 100vh;
+    background-color: midnightblue;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.panel {
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    box-shadow: 0px 0px 30px -5px black;
+    overflow: hidden;
+    height: 500px;
+    width: 400px;
+    z-index: 3;
+}
+
+.panel-background {
+    background: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 500px;
+    width: 400px;
+    position: absolute;
+    z-index: -1;
+    filter: contrast(0.4) brightness(0.2);
+    transition: 0.75s;
+}
+
+.panel:hover > .panel-background {
+    filter: contrast(1) brightness(1);
+}
+
+.date {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--background);
+    padding: 7px;
+}
+
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background: var(--background);
+}
+
+.header:hover > .text {
+    height: 100px;
+}
+
+.author {
+    margin: 10px;
+}
+
+.button {
+    padding: 5px;
+    margin: 5px;
+    background: none;
+    border: none;
+    align-self: flex-end;
+    border: none;
+    outline:none;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.button:after {
+    text-align: center;
+    color: white;
+    content: '\2807';
+    font-size: 18px;
+}
+
+.text-header {
+    margin: 0px 10px 10px 10px;
+}
+
+.text {
+    height: 0px;
+    transition: 0.5s;
+    margin: 0px 10px 0px 10px;
+}
+
+.navbar {
+    height: 0px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    transition: 0.25s;
+    overflow: hidden;
+}
+
+a, a:visited, a:focus, a:hover {
+    text-decoration: none;
+    color: white;
+    width: 100%;
+}
+
+.link {
+    list-style: none;
+    width: 101%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--dark-background);
+    transition: 0.5s;
+}

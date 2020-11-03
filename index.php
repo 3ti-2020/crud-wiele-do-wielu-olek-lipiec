@@ -1,7 +1,7 @@
 <?php error_reporting( E_ALL ); ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +12,19 @@
 
     <header class="header">
     
+        <form class="login" action="lib/login.php" method="POST">
+        
+            <input type="text" name="login" placeholder="Login..." required>
+            <input type="password" name="password" placeholder="Hasło..." required>
+            <span class="password">admin haslo123</span>
+            <input type="submit" value="Zaloguj">
+        
+        </form>
+
+        <a href="./karty/index.html"><h1>Karty</h1></a>
+
+        <a href="./secret.php"><h1>Secret</h1></a>
+
     </header>
 
     <nav class="nav">
