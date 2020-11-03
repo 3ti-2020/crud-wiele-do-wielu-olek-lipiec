@@ -8,10 +8,10 @@ body {
     min-width: 100%;
     display: grid;
     grid-template-areas:
-    "h"
-    "m";
+    "h h"
+    "n m";
     grid-template-rows: 25vh auto;
-    grid-template-columns: 100%;
+    grid-template-columns: 25% 75%;
 }
 
 .header {
@@ -22,4 +22,9 @@ body {
 .main {
     grid-area: m;
     background: lightcoral;
+}
+
+.nav {
+    grid-area: n;
+    background: lightgreen;
 }
