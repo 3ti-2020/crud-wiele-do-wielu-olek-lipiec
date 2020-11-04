@@ -47,7 +47,7 @@
 
         require_once("lib/table.php");
 
-        table("SELECT * FROM `lib_autor_tytul`, `lib_autor`, `lib_tytul` WHERE `lib_autor_tytul`.`id_autor`=`lib_autor`.`id_autor` AND `lib_autor_tytul`.`id_tytul`=`lib_tytul`.`id_tytul`", array("id_autor_tytul", "name", "tytul"));
+        table("SELECT `lib_users`.`name` as 'imie_nazwisko', `lib_autor`.`name` as 'imie_nazwisko_autora', `lib_tytul`.`tytul` as 'tytul', `data_wypozyczenia`, `data_oddania` FROM `lib_wypozyczenia`, `lib_autor_tytul`, `lib_autor`, `lib_tytul`, `lib_users` WHERE `lib_autor_tytul`.`id_autor`=`lib_autor`.`id_autor` AND `lib_autor_tytul`.`id_tytul`=`lib_tytul`.`id_tytul` AND `lib_wypozyczenia`.`id_user`=`lib_users`.`id_user` AND `lib_wypozyczenia`.`id_autor_tytul`=`lib_autor_tytul`.`id_autor_tytul`", array("imie_nazwisko", "imie_nazwisko_autora", "tytul", "data_wypozyczenia", "data_oddania"));
 
         ?>
     
