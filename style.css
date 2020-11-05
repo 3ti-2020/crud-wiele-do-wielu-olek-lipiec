@@ -18,8 +18,16 @@ body {
     grid-area: h;
     background: lightblue;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+}
+
+.info {
+    width: 100vw;
+    align-self: flex-start;
+    display: flex;
+    justify-content: space-between;
 }
 
 .main {
@@ -30,10 +38,16 @@ body {
     align-items: center;
 }
 
+.cell {
+    border: 1px solid #000;
+}
+
 .nav {
     grid-area: n;
     background: lightgreen;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .form {
@@ -58,7 +72,7 @@ a, a:focus, a:visited, a:hover {
 }
 
 a:hover {
-    color: #888;
+    color: #fff;
     text-shadow: 0px 0px 5px #000;
 }
 

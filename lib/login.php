@@ -1,9 +1,11 @@
 <?php
 
     session_start();
+    require_once("connect.php");
 
-    if ($_POST['login'] === "admin" && $_POST['password'] === "haslo123") $_SESSION['login'] = $_POST['login'];
+    if ($conn->query("SELECT * FROM `lib_users` WHERE `name` = '".$_POST['login']."' AND `password` = '".$_POST['password']."'")->fetch_assoc()) $_SESSION['login'] = $_POST['login'];
+    
 
-    header("Location: ../secret.php");
+    header("Location: ../index.php");
 
 ?>
