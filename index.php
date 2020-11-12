@@ -39,15 +39,44 @@
 
     <nav class="nav">
 
-    <form class="login" action="lib/login.php" method="POST">
-        
-        <input type="text" name="login" placeholder="Login..." required>
-        <input type="password" name="password" placeholder="Hasło..." required>
-        <span class="password">admin a</span>
-        <input type="submit" value="Zaloguj">
-    
-    </form>
+<?php
 
+    if (!isset($_SESSION['login'])) {
+
+        echo('<form class="login" action="lib/login.php" method="POST">
+            
+            <input type="text" name="login" placeholder="Login..." required>
+            <input type="password" name="password" placeholder="Hasło..." required>
+            <span class="password">admin a</span>
+            <input type="submit" value="Zaloguj">
+        
+        </form>');
+        
+    }
+    else {
+        echo('
+        
+        <form class="wypozycz" action="lib/wypozycz.php" method="POST">
+        
+            <label for="ksiazka">Wybierz książkę:</label>
+            <select name="ksiazka" class="ksiazki">');
+
+            require_once("lib/connect.php");
+
+            $result = $conn->query("SELECT * FROM `lib_tytul`, `lib_autor`, `lib_autor_tytul` WHERE `lib_tytul`.`id_tytul`=`lib_autor_tytul`.`id_tytul` AND `lib_autor`.`id_autor`=`lib_autor_tytul`.`id_autor`");
+
+            while ($rs = $result->fetch_assoc()) {
+                echo('<option value="'.$rs['id_autor_tytul'].'">'.$rs['name'].' - '.$rs['tytul'].'</option>');
+            }
+
+            $conn->close();
+
+            echo('</select>
+            <input type="submit" value="Wypożycz">
+        </form>');
+    }
+
+    ?>
     </nav>
 
     <main class="main">

@@ -24,7 +24,7 @@
             }
             if ($idColumn != null) echo("<td class='cell'>
             
-            <form action='lib/delete.php'>
+            <form action='lib/delete.php' method='POST'>
 
                 <input type='hidden' name='id' value='".$rs[$idColumn]."'>
                 <input type='submit' value='Usuń'>
